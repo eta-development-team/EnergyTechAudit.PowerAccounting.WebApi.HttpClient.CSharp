@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace EnergyTechAudit.PowerAccounting.WebApi
 {
-    internal class Program
+    class Program
     {
-
         public static void Main()
         {
             using (var client = new System.Net.Http.HttpClient())
