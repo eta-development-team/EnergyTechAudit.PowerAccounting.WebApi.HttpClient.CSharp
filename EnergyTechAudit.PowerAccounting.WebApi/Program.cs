@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EnergyTechAudit.PowerAccounting.WebApi
 {
-    class Program
+    internal class Program
     {
         public static void Main()
         {
