@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace EnergyTechAudit.PowerAccounting.WebApi
 {
@@ -12,7 +9,7 @@ namespace EnergyTechAudit.PowerAccounting.WebApi
     {
         public static void Main()
         {
-            using (var client = new System.Net.Http.HttpClient())
+            using (var client = new HttpClient())
             {
                 var startDateTime = DateTime.Parse("2015-01-01");
                 var endDateTime = DateTime.Parse("2015-01-31");
