@@ -11,8 +11,8 @@ namespace EnergyTechAudit.PowerAccounting.WebApi
         {
             using (var client = new HttpClient())
             {
-                var startDateTime = DateTime.Parse("2015-01-01");
-                var endDateTime = DateTime.Parse("2015-01-31");
+                var startDateTime = DateTime.Parse("2015-04-01");
+                var endDateTime = DateTime.Parse("2015-04-30");
 
                 // для возможности использования самоподписанного сертификата сервера 
                 // после установки на сервер заверенного сертификата вызов данного обработчика будет не нужен 
@@ -20,17 +20,19 @@ namespace EnergyTechAudit.PowerAccounting.WebApi
                 {
                     return true;
                 };
-                client.BaseAddress = new Uri("https://192.168.1.2"); // https://eta.asd116.ru
+                client.BaseAddress = new Uri("https://eta.asd116.ru:8433"); // 
 
                 client.DefaultRequestHeaders.Add("login", "Archive.Downloader");
-                client.DefaultRequestHeaders.Add("password", "xxxxxx");
+                client.DefaultRequestHeaders.Add("password", "xxx");
 
                 var requestUri = string.Format
                 (
                     "/api/package/archive?" +
-                    "ar.withDictionaries=true&" +
-                    "ar.startDateTime={0:yyyy-MM-dd}&" +
-                    "ar.endDateTime={1:yyyy-MM-dd}&" +
+                    "ar.measurementDeviceId=234&" +
+                    "ar.periodTypeId=3&" +
+                    "ar.withDictionaries=false&" +
+                    "ar.periodBegin={0:yyyy-MM-dd}&" +
+                    "ar.periodEnd={1:yyyy-MM-dd}&" +
                     "responseToFile=true",
 
                     startDateTime,
