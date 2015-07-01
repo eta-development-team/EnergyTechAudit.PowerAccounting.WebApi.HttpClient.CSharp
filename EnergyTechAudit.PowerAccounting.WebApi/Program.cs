@@ -28,11 +28,11 @@ namespace EnergyTechAudit.PowerAccounting.WebApi
                 var requestUri = string.Format
                 (
                     "/api/package/archive?" +
-                    "ar.measurementDeviceId=234&" +
-                    "ar.periodTypeId=3&" +
-                    "ar.withDictionaries=false&" +
-                    "ar.periodBegin={0:yyyy-MM-dd}&" +
-                    "ar.periodEnd={1:yyyy-MM-dd}&" +
+                    "measurementDeviceId=1507&" +
+                    "periodTypeId=3&" +
+                    "withDictionaries=true&" +
+                    "periodBegin={0:yyyy-MM-dd}&" +
+                    "periodEnd={1:yyyy-MM-dd}&" +
                     "responseToFile=true",
 
                     startDateTime,
