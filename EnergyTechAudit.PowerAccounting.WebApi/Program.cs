@@ -20,14 +20,14 @@ namespace EnergyTechAudit.PowerAccounting.WebApi
                 {
                     return true;
                 };
-                client.BaseAddress = new Uri("https://eta.asd116.ru:8433"); // 
+                client.BaseAddress = new Uri("https://eta.asd116.ru:8443"); // 
 
                 client.DefaultRequestHeaders.Add("login", "Archive.Downloader");
                 client.DefaultRequestHeaders.Add("password", "xxx");
 
                 var requestUri = string.Format
                 (
-                    "/api/package/archive?" +
+                    "/api/package/measurementDeviceArchive?" +
                     "measurementDeviceId=1507&" +
                     "periodTypeId=3&" +
                     "withDictionaries=true&" +
